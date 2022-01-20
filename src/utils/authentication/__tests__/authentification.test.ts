@@ -20,7 +20,7 @@ describe("AuthenticationManager", () => {
 
     const result = await AuthenticationManager.signInAnonymously("test", "url");
 
-    waitFor(() => {
+    await waitFor(() => {
       expect(result).toEqual(true);
       expect(user.set).toBeCalledWith("displayName", "test");
       expect(user.set).toBeCalledWith("photoURL", "url");
